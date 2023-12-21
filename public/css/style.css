@@ -1,0 +1,60 @@
+body {
+    font-family: 'poppins', sans-serif;
+
+}
+
+.shad {
+    box-shadow: 0px 2px 2px #2b2958;
+}
+
+.lpage-nav {
+    background-color: #181642;
+}
+
+.lbtn {
+    background-color: #FF2C90;
+    color: #FFFFFF;
+}
+
+.lbtn:hover {
+    background-color: #da096a;
+    color: #FFFFFF;
+}
+
+.container-lpage {
+    background-color: #181642;
+    height: 100vh;
+}
+
+.typing {
+    position: relative;
+}
+
+.typing::after {
+    content: '|';
+    position: absolute;
+    right: 0;
+    color: #181642;
+    background-color: #181642;
+    width: 100%;
+    animation: typing 3s infinite alternate;
+
+}
+
+@keyframes typing {
+    100% {
+        width: 0%;
+    }
+}
+
+.bg-theme {
+    background-color: #0e0d23;
+    color: white;
+}
+
+.skills {
+    margin: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
