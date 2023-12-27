@@ -1,0 +1,145 @@
+<div class="container">
+    <div class="card mt-3">
+
+        <img src="/images/web-banner-28759.png" class="card-img-top" alt="job-banner">
+        <div class="card-body">
+            <h1>
+                <span>
+                    <%= job.role %>
+                </span> <span>oppertunity in <%= job.location %> at <%= job.companyName %></span>
+            </h1>
+
+            <div class="my-3 mx-2">
+                <span style="max-width: 160px;"
+                    class="text-white border border-warning bg-warning border border-success p-1 border-opacity-50 rounded">
+                    Actively
+                    Hiring
+                    <i class="fa-solid fa-arrow-trend-up fa-lg" style="color: #0c6917;"></i></span>
+                <% if(locals.userEmail == job.userEmail){ %>
+
+                    <a href="/job/<%= job.jobId %>/update" style="text-decoration: none;"><span class="mx-3"><i
+                                class="fa-regular fa-pen-to-square fa-xl"></i></span> </a>
+                    <button type="submit" class="btn btn-md text-danger"
+                        style="text-decoration: none; border: none; background: transparent;"
+                        onclick="deleteJob('<%= job.jobId %>')"> <i class="fa-solid fa-file-excel fa-xl"></i>
+                    </button>
+                    <% } %>
+            </div>
+
+            <h2 class="card-title my-1 fw-bold text-warning">
+                <%= job.companyName %>
+            </h2>
+            <h4 class="card-subtitle my-1 fw-bold">
+                <span>Tech</span>
+                <span class="text-info">
+                    <%= job.role %>
+                </span>
+            </h4>
+
+            <div class="d-flex flex-column my-2">
+                <span><i class="fa-solid fa-location-dot"></i>
+                    <%= job.location %>
+                </span>
+
+                <span><i class="fa-solid fa-indian-rupee-sign"></i>
+                    <%= job.ctc %> LPA
+                </span>
+                <span><i class="fa-solid fa-hourglass-half fa-lg"></i>
+                    Apply By <span>
+                        <%= job.applyBy %>
+                    </span>
+                </span>
+                <span><i class="fa-solid fa-signal fa-xs"></i>
+                    Number of openings <%= job.vacancy %>
+                </span>
+
+                <a href="<% if(locals.userEmail){ %>
+                            /applicants/<%= job.jobId %>
+                            <% }else{ %>
+                            /404-page
+                    <% } %>" style="text-decoration: none;"><span class="text-danger">
+                        <i class="fa-solid fa-user-group fa-lg"></i>
+                        Applicants <%= applicants %>
+                    </span></a>
+
+
+
+
+            </div>
+
+            <div class="container mt-3">
+                <div class="skills p-1 my-2">
+                    <% if(Array.isArray(job.skills)){ %>
+
+                        <% job.skills.forEach( (skill)=>{ %>
+
+                            <button class="btn btn-sm btn-outline-info">
+                                <%= skill %>
+                            </button>
+                            <% }) %>
+                                <% } else{ %>
+                                    <button class="btn btn-sm btn-outline-info">
+                                        <%= job.skills %>
+                                    </button>
+
+                                    <% } %>
+                </div>
+                <button class="btn btn-primary" type="button" data-bs-toggle="modal"
+                    data-bs-target="#applicant-modal">Apply Now</button>
+            </div>
+
+            <small class="text-body-secondary d-block mt-4">
+                <span class="bg-success border-success p-1 rounded text-white border-opacity-50"
+                    style="width: 160px;">Posted: <%= job.postedDate %></span>
+            </small>
+        </div>
+
+    </div>
+
+    <!-- Applicant Modal -->
+
+    <div class="modal rounded" id="applicant-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content px-2">
+                <div class="modal-header">
+                    <h3 class="modal-title text-success"> easily </h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="<%=job.jobId %>" method="post" enctype="multipart/form-data">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="name">Name</span>
+                            <input type="text" class="form-control" placeholder="Enter your name" aria-label="name"
+                                name="name">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="email">Email</span>
+                            <input type="email" class="form-control" placeholder="Enter your email" aria-label="email"
+                                name="email">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="contact">Contact</span>
+                            <input type="contact" class="form-control" placeholder="+91 ____ __ ____"
+                                aria-label="contact" name="contact">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="resume">Resume</span>
+                            <input type="file" class="form-control" aria-label="contact" name="resume"
+                                accept="images/*, .pdf">
+                        </div>
+
+
+                        <a href="<%=job.jobId %>"> <button type="submit" class="btn btn-success w-100">Submit</button>
+                        </a>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

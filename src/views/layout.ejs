@@ -13,7 +13,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lumanosimo&family=Poppins:wght@100;200;300&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/main.js"></script>
   <title> Easily </title>
 </head>
 
@@ -33,15 +34,29 @@
           <li class="nav-item">
             <a class="nav-link" href="/jobs">Jobs</a>
           </li>
+
+          <% if(locals.userEmail) { %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Recruiter
+              <%= user.name %>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="/login">Login</a></li>
-              <li><a class="dropdown-item" href="#">Post New Job</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <li><a class="dropdown-item" href="/post-new-job">Post New Job</a></li>
             </ul>
+            </li>
+           <% } else{ %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Recruiter
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <li><a class="dropdown-item" href="/post-new-job">Post New Job</a></li>
+              </ul>
+              <% }%> 
           </li>
         </ul>
 
@@ -52,7 +67,7 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid" style="height: 100vh;">
+  <div>
     
     <%- body %>
 

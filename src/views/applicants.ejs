@@ -1,0 +1,32 @@
+<table class="table table-striped container mt-3">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Resume</th>
+        </tr>
+    </thead>
+    <% applicants.forEach((applicant)=>{ %>
+
+        <tbody>
+            <tr>
+                <td>
+                    <%= applicant.appID %>
+                </td>
+
+                <td>
+                    <%= applicant.name %>
+                </td>
+                <td>
+                    <%= applicant.email %>
+                </td>
+                <td>
+                    <%= applicant.contact %>
+                </td>
+                <td><a href="/<%= applicant.resumePath %> " class="btn btn-primary">View</a></td>
+            </tr>
+        </tbody>
+        <% }) %>
+</table>

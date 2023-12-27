@@ -1,0 +1,89 @@
+<div class="container-fluid d-flex justify-content-center">
+
+    <div class="card p-2 mt-3" style="width: 50rem;">
+        <div class="card-title text-center">
+            <h2>Post a New Job </h2>
+        </div>
+
+        <% if(errors){ %>
+
+            <% errors.forEach((err)=>{ %>
+            <div class="alert alert-danger" role="alert">
+                <%= err.msg %>
+            </div>
+            
+           <% }) %>
+        <% } %>
+
+        <form action="/post-new-job" method="post">
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <select class="form-select" aria-label="Default select example" name="category" id="category">
+                        <option selected disabled>Select Job Category</option>
+                        <option value="Tech">Tech</option>
+                        <option value="Non-Tech">Non-Tech</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <select class="form-select" aria-label="Default select example" name="role"
+                        id="role">
+                        <option selected disabled>Select Job Designation</option>
+                        <option value="HR">HR</option>
+                        <option value="SDE">SDE</option>
+                        <option value="DevOps">DevOps</option>
+                        <option value="MERN Developer">MERN Developer</option>
+                        <option value="MEAN Developer">MEAN Developer</option>
+                        <option value="Java Developer">Java Developer</option>
+                        <option value="Front-end Developer">Front-end Developer</option>
+                        <option value="Back-end Developer">Back-end Developer</option>
+                        <option value="Full-stack Developer">Full-stack Developer</option>
+                    </select>
+                </div>
+
+                <label for="location" class="form-label">Enter Job Location</label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="location" aria-describedby="basic-addon3"
+                        name="location">
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="companyName">Company Name</span>
+                    <input type="text" class="form-control" placeholder="" aria-label="Username"
+                        aria-describedby="basic-addon1" name="companyName">
+                </div>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter Salary in LPA" aria-label="salary"
+                        aria-describedby="basic-addon1" name="ctc">
+                    <span class="input-group-text" id="vacancy">Total Positions</span>
+                    <input type="number" class="form-control" placeholder="vacancy" aria-label="vacancy" max="50"
+                        min="1" aria-describedby="vacancies" name="vacancy">
+                </div>
+
+                <div class="input-group mb-3">
+                    <select class="form-select" multiple aria-label="Default select example" name="skills" id="skills">
+                        <option selected disabled>Select Skills Required</option>
+                        <option value="REACT">REACT</option>
+                        <option value="Angular">Angular</option>
+                        <option value="Vue.js">Vue.js</option>
+                        <option value="SQL">SQL</option>
+                        <option value="MongoDB">MongoDB</option>
+                        <option value="Express">Express</option>
+                        <option value="SpringBoot">SpringBoot</option>
+                        <option value="C++">C++</option>
+                        <option value="Data Structure & Algo">Data Structure & Algo</option>
+                    </select>
+                    <span class="input-group-text" id="apply-by">Apply By</span>
+                    <input type="date" class="form-control" placeholder="dd-mm-yyyy" aria-label="apply-by" max="50"
+                        min="1" aria-describedby="application date" name="applyBy" id="applyBy">
+                </div>
+                <button class="w-100 mb-3 mt-2 btn btn-md btn-success" type="submit">
+                    Submit
+                </button>
+
+            </div>
+        </form>
+    </div>
+
+</div>
