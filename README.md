@@ -15,10 +15,10 @@ ________________________________________________________________________________
 
 <h2> Insights </h2>
 <ul>
-<li>This project is built using MVC design pattern. </li>
+<li>This project is built using MVC architecture. </li>
 <li> The views are rendered using ejs library. </li>
 <li> The model utilizes in-memory data structures.</li>
-<li> Session is implemented to ensure users do not have to log in again and again.</li>
+<li> Sessions are employed to maintain user authentication, preventing the need for repeated logins.</li>
 <li> Multer library is used for seamless file upload </li>
 </ul>
 
