@@ -1,6 +1,6 @@
 <h1>Easily Job Portal</h1>
 
-This Application helps job seekers apply for a job and recruiters add new jobs and update existing ones.
+This Application helps job seekers apply for a job and recruiters add new jobs and update existing ones. 
 <hr/>
 <h2>Tech Stack:</h2>
 <div>
@@ -11,3 +11,8 @@ This Application helps job seekers apply for a job and recruiters add new jobs a
   <img src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=yellow"/>
   <img src="https://img.shields.io/badge/EJS-B4CA65.svg?style=for-the-badge&logo=EJS&logoColor=black">
 </div>
+_________
+
+<h2> Insights </h2>
+
+This project is built using MVC pattern. The model we have used the in-memory data structures. 
