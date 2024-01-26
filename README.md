@@ -11,8 +11,14 @@ This Application helps job seekers apply for a job and recruiters add new jobs a
   <img src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=yellow"/>
   <img src="https://img.shields.io/badge/EJS-B4CA65.svg?style=for-the-badge&logo=EJS&logoColor=black">
 </div>
-_________
+__________________________________________________________________________________________________________
 
 <h2> Insights </h2>
+<ul>
+<li>This project is built using MVC design pattern. </li>
+<li> The views are rendered using ejs library. </li>
+<li> The model utilizes in-memory data structures.</li>
+<li> Session is implemented to ensure users do not have to log in again and again.</li>
 
-This project is built using MVC pattern. The model we have used the in-memory data structures. 
+</ul>
+
