@@ -1,6 +1,7 @@
 <h1>Easily Job Portal</h1>
 
-This Application helps job seekers apply for a job and recruiters add new jobs and update existing ones. 
+This application helps job seekers apply for a job and recruiters add new jobs and update existing ones. Upon submitting a job application, applicants will promptly receive an email confirming the successful submission of their application.
+
 <hr/>
 <h2>Tech Stack:</h2>
 <div>
