@@ -1,4 +1,4 @@
-import { ExpressValidator, body, validationResult } from "express-validator";
+import {body, validationResult } from "express-validator";
 
 export const validatePostJob = async (req, res, next) => {
     let rules = [

@@ -30,24 +30,28 @@ app.use(express.static("public"));
 
 //get requests
 
+//users requests
 app.get("/", UserController.renderHome);
-app.get("/jobs", JobsController.renderJobs);
 app.get("/login", UserController.renderLogin);
-app.get("/job/:id", JobsController.renderJobID);
-app.get("/post-new-job", auth, JobsController.renderPostNewJob);
-app.get("/applicants/:id", auth, ApplicantController.renderApplicant);
-app.get("/job/:id/update", auth, JobsController.updateJob);
 app.get("/logout", UserController.renderLogout);
 app.get("/404-page", UserController.errorPage);
 
+//Jobs get requests
+
+app.get("/jobs", JobsController.renderJobs);
+app.get("/job/:id", JobsController.renderJobID);
+app.get("/post-new-job", auth, JobsController.renderPostNewJob);
+app.get("/job/:id/update", auth, JobsController.updateJob);
+app.get("/applicants/:id", auth, ApplicantController.renderApplicant);
+
 // POST Request
 
-app.post("/job/:id/update", auth, validatePostJob, JobsController.postUpdateJob);
-app.post("/delete-job/:id", JobsController.deleteJob);
 app.post("/", reqCheck, UserController.postRegistration);
 app.post("/login", UserController.postLogin);
 app.post("/post-new-job", auth, validatePostJob, JobsController.postPostNewJob);
+app.post("/delete-job/:id", JobsController.deleteJob);
 app.post("/job/:id", upload.single('resume'), validateApplyJob, ApplicantController.postApplicant);
+app.post("/job/:id/update", auth, validatePostJob, JobsController.postUpdateJob);
 
 
 export default app;
