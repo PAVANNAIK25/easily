@@ -1,15 +1,19 @@
+// external modules
+import 'dotenv/config'
 import express from "express";
-import UserController from "./src/controller/user.controller.js";
-import JobsController from "./src/controller/jobs.controller.js";
-import path from "path";
 import expressEjsLayouts from "express-ejs-layouts";
+import session from "express-session";
+import cookieParser from "cookie-parser";
+import path from "path";
+
+//internal imported modules
 import { reqCheck } from "./src/middlewares/req.middleware.js";
+import JobsController from "./src/controller/jobs.controller.js";
+import UserController from "./src/controller/user.controller.js";
 import { upload } from "./src/middlewares/file-upload.middleware.js";
 import ApplicantController from "./src/controller/applicant.controller.js";
-import session from "express-session";
 import { auth } from "./src/middlewares/auth.middleware.js";
 import { validateApplyJob, validatePostJob } from "./src/middlewares/validate.middleware.js";
-import cookieParser from "cookie-parser";
 
 
 const app = express();
@@ -20,7 +24,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(path.resolve(), "src", "views"));
 app.use(expressEjsLayouts);
 app.use(session({
-    secret: "secreteKey",
+    secret: process.env.SECRETE_KEY,
     resave: false,
     saveUninitialized: true,
     cookie:{secure: false},

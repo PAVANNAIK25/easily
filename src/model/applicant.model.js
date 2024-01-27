@@ -40,8 +40,8 @@ let id=2;
 export let applicants = [{
     "jobID":1,
     appID: 1,
-    name : "Pavan Naik",
-    email : "pavan@gmail.com",
-    contact : "9876543245",
+    name : "Demo",
+    email : "demoapplicant@gmail.com",
+    contact : "8976543334",
     resumePath : "public/resume/PSD to HTML.png",
 }];

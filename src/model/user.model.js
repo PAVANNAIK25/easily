@@ -47,7 +47,7 @@ let id =2;
 
 let users = [{
     id:1,
-    name: "pavan",
-    email:"pavan@gmail.com",
-    password: "pavan",
+    name: "Demo Recruiter",
+    email:"demorecruiter@gmail.com",
+    password: "Demo@123"
 },];

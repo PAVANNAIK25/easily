@@ -65,8 +65,8 @@ let id=3;
 export let jobs = [{
     "jobId":1,
     "category":"Tech",
-    "companyName":"Coding Ninjas",
-    "role": "SDE",
+    "companyName":"Google",
+    "role": "SDE-I",
     "location": "Gurgaon HR IND Remote",
     "ctc": "14-20",
     "vacancy": "4",
